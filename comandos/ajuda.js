@@ -1,66 +1,62 @@
-const Discord = require('discord.js');
-module.exports.run = async (client, message, args) => {
-    message.reply(`Enviei minhas informações em seu privado , olhe lá :wave:`).then(msg => msg.delete(6000));
-    const msg1 = new Discord.RichEmbed()
-    .setAuthor(message.author.username, message.author.displayAvatarURL)
-    .setColor('RANDOM')
-    .setDescription(`Olá **${message.author.username}**, sou o \`SpaceStore\` Um bot oficial da loja.
-    \n :robot: Meu criador: **» SuperPanda «#2032**.
-    \n :desktop: Site: Em Criação!
-    \n :question: Twitter: [Clique Aqui](https://twitter.com/Super_Inscritos
-    \n\`Selecione alguma categoria para ver o comando.\`
-    \n🔩 **»** Comandos de Moderação
-    \n📋 **»** Outros comandos
-    \n🤝 **»** Parceria`)
-    message.member.send(msg1).then(msg=> {
-        msg.react("🔩").then(r => {
-            msg.react("📋")
-                msg.react("🤝");
+module.exports.run = async(client, message, args) =>{
+  message.delete();  
+  message.reply(`Mandei meus comandos no seu privado.`);
+  message.author.send({embed: {
+        color: 12584993,
+        author: {
+          name: `${message.author.tag}`,
+          icon_url: message.author.avatarURL
+        },
+        title: ":wave: Informações - SpaceBot™",
+        url: " ",
+        description: "AVISO: Mil Membros Iremos Fazer Sorteio de capa da minecon",
+        fields: [{
+            name: ":school_satchel: Ajuda",
+            value: "Quer saber alguns comandos meus? Veja abaixo! (lembrando que os comandos de moderação precisam do cargo `Staff`.)"
+          },
+          {
+            name: ":mortar_board: Moderação",
+            value: 
+`
+**-ban** = Irá banir o membro mencionado (Necessita da menção do usuário e motivo) 
+**-unban** = Irá desbanir o membro já banido (Precisa da menção e motivo)
+**-mute** = Irá mutar o membro mencionado (Precisa da menção e motivo)
+**-unmute** = Irá desmutar o membro já mutado (o membro precisa estar mutado para poder desmutar)
+**-limpar** = Limpará as mensagens (quantidade para colocar: 2 à 100 mensagens)
+**-kick** = Irá kickar o membro mencionado (Necessita da menção do usuário e motivo) 
+**-lockdown** = Irá fechar o chat. **(Poderá ter bugs!)**
+**-parceiro** = Irá Anunciar Uma Nova Parceria**`
+          
+},
+          {
+            name: ":joy: Informação & Diversão",
+            value: 
+`
+**-ping** = Caso queira ver o ping do bot
+**-cat** = Gatinhos!!
+**-votacao** = Fazer uma votação.
+**-aviso** = Fazer um aviso.
+**-conquista** = Fazer uma conquista.
+**-piada** = O Bot irá fazer uma piada.
+`
+          
+},
+          {
+            name: "Meu Criador:",
+            value: "Bem, fui criado e programado por: <@272419543601643520>"
+          },
+          {
+            name: "Twitter do criador:",
+            value: `[Aqui](https://twitter.com/Super_Inscritos)`
 
-            const comandos = (reaction, user) => reaction.emoji.name === '🔩' && user.id === message.author.id;
-            const geral = (reaction, user) => reaction.emoji.name === "📋" && user.id === message.author.id;
-            const parceria = (reaction, user) => reaction.emoji.name === "🤝" && user.id === message.author.id;
-            const eqp = msg.createReactionCollector(comandos, { time: 60000});
-            const grl = msg.createReactionCollector(geral, { time: 60000});
-            const prc = msg.createReactionCollector(parceria, { time: 60000});
-
-            eqp.on('collect', r=> {
-                const embed = new Discord.RichEmbed()
-                .setAuthor("🔩 Comandos de Moderação")
-                .setColor('RANDOM')
-                .setDescription(`**h!ban** \`<@user>\` \`<motivo>\` - Para banir um membro do servidor.
-                \n**-ick** \`<@user>\` \`<motivo>\` - Para kickar um membro do servidor.
-                \n**aviso** \`<mensagem do anúncio>\` - Para avisar algo na loja.
-                \n**limpar** \`<quantia>\` - Para você limpar o chat.
-                \n**votacao** \`<msg>\` - Para você abrir uma votação.
-                \n**say** \`<msg>\` - Irá mandar mensagens com o bot.
-                \n**parceiro** \`<msg>\` - Você ira mandar alguma nova parceria da loja.
-                \n**mute** \`<@user>\` \`<motivo>\` - Irá mutar o usuário mencionado.
-                \n**unmute** \`<@user>\` - Irá desmutar o usuário mencionado.
-                message.member.send({embed: embed}).then(a=>a.delete(15000));
-            })
-            grl.on('collect', r=>{
-                const glr = new Discord.RichEmbed()
-                .setAuthor("📋 Outros comandos")
-                .setColor('RANDOM')
-                .setDescription(`**h!ajuda** - Onde mostra todos os comandos do bot.
-                \n**avatar** - Para você baixar seu avatar.
-                \n**avatar** \`<@user>\` - Para você baixar o avatar do usuário mencionado.
-                \n**serverinfo** - Para ver as informações sobre a loja.`)
-                message.author.send({ embed: glr }).then(a=>a.delete(15000));
-            })
-                        prc.on('collect', r=>{
-                const prc = new Discord.RichEmbed()
-                .setAuthor("🤝 Parceria")
-                .setColor('RANDOM')
-                .addField("Fale com um dono.")
-                .addField("Benefícios","Divulgação em 2 a 2 dias, caso em 3 em 3 horas será sem everyone.")
-                message.author.send({ embed: prc}).then(a=>a.delete(15000));
-            })
-        })
-    })
-}
-//
-module.exports.help = {
-    name: "ajuda"
+          }, 
+        
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: client.user.avatarURL,
+          text: "© SpaceStore™"
+        }
+      }
+    });
 }
