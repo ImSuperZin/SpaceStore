@@ -47,7 +47,7 @@ module.exports.run = async(client, message, args) =>{
           },
           {
             name: ":wave: Olhe Aqui Em Baixo;",
-            value: `Quer Parceria? , Fale com um <@494666318943879169> Ou Com <@496393136906567690>`
+            value: `Quer Parceria? , Fale com um DONO ou CO-DONO`
 
           }, 
         
