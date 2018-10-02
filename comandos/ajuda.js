@@ -7,15 +7,15 @@ module.exports.run = async(client, message, args) =>{
           name: `${message.author.tag}`,
           icon_url: message.author.avatarURL
         },
-        title: "Informações - SpaceBot™",
+        title: ":wave: Informações - SpaceBot™",
         url: " ",
-        description: "AVISO: Mil Membros Iremos Fazer Sorteio de capa da minecon",
+        description: ":warning: AVISO: Mil Membros Iremos Fazer Sorteio de capa da minecon",
         fields: [{
-            name: "Ajuda",
-            value: "Quer saber alguns comandos meus? Veja abaixo! (lembrando que os comandos de moderação precisam do cargo `Staff`.)"
+            name: ":school_satchel: Ajuda",
+            value: ":coffee: Quer saber alguns comandos meus? Veja abaixo! (lembrando que os comandos de moderação precisam do cargo `Staff`.)"
           },
           {
-            name: "Moderação",
+            name: ":mortar_board: Moderação",
             value: 
 `
 **-ban** = Irá banir o membro mencionado (Necessita da menção do usuário e motivo) 
@@ -29,7 +29,7 @@ module.exports.run = async(client, message, args) =>{
           
 },
           {
-            name: "Informação & Diversão",
+            name: ":joy: Informação & Diversão",
             value: 
 `
 **-ping** = Caso queira ver o ping do bot
