@@ -46,8 +46,8 @@ module.exports.run = async(client, message, args) =>{
             value: ":wink: Vale A Pena Comprar "
           },
           {
-            name: ":wave:",
-            value: `<a:hypersquad:471788546466775061> Quer Parceria? , Fale com um <@494666318943879169> Ou Com <@496393136906567690>`
+            name: ":wave: Olhe Aqui Em Baixo;",
+            value: `Quer Parceria? , Fale com um <@494666318943879169> Ou Com <@496393136906567690>`
 
           }, 
         
