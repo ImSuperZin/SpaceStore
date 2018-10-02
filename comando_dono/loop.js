@@ -13,7 +13,7 @@ module.exports.run = async (client) =>{
 
     for (i=0; i<10;){
         
-        client.user.setPresence({ game: { name: `@Super_Inscritos`, url: "https://www.twitch.tv/Gray", type: 1} });
+        client.user.setPresence({ game: { name: `Minecraft Na Loja Space!`, url: "https://www.twitch.tv/Gray", type: 1} });
         await sleep(60000)
         client.user.setPresence({ game: { name: "SpaceStore | -ajuda", type: 0 } });
         await sleep(60000)
