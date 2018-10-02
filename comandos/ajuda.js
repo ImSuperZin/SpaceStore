@@ -40,16 +40,10 @@ module.exports.run = async(client, message, args) =>{
 **-piada** = O Bot irá fazer uma piada.
 `
           
-},
-          {
-            name: "Meu Criador:",
-            value: "Bem, fui criado e programado por: <@272419543601643520>"
-          },
-          {
-            name: "Twitter do criador:",
-            value: `[Aqui](https://twitter.com/Super_Inscritos)`
+ },       
 
-          }, 
+          
+            
         
         ],
         timestamp: new Date(),
@@ -59,4 +53,5 @@ module.exports.run = async(client, message, args) =>{
         }
       }
     });
+  }
 }
