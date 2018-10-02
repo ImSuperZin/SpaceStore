@@ -40,10 +40,16 @@ module.exports.run = async(client, message, args) =>{
 **-piada** = O Bot irá fazer uma piada.
 `
           
- },       
+},
+          {
+            name: ":chocolate_bar: Melhor Loja De Minecraft Confiavel Do Brasil",
+            value: ":wink: Vale A Pena Comprar "
+          },
+          {
+            name: ":wave:",
+            value: `<a:hypersquad:471788546466775061> Quer Parceria? , Fale com um <@494666318943879169> Ou Com <@496393136906567690>`
 
-          
-            
+          }, 
         
         ],
         timestamp: new Date(),
@@ -53,5 +59,4 @@ module.exports.run = async(client, message, args) =>{
         }
       }
     });
-  }
 }
