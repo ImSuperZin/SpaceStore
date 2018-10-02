@@ -27,7 +27,7 @@ client.on('message', message => {
 client.on('message', message => {
     if(message.content == 'SpaceStore'){
       var embed = new Discord.RichEmbed()
-      .setDescription(`**${message.author}**, A Melhor Loja e confiavel de \`Minecraft\`.`)
+      .setDescription(`**${message.author}**, A Melhor Loja Confiável de \`Minecraft\`.`)
       message.channel.send(embed)
     }
   });
